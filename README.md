@@ -7,33 +7,48 @@
 <br />
 
 <div align="center">
-  <h1>🛡️ ASA Bank: Enterprise Security Infrastructure</h1>
-  <p><b>Lead Architect: Abdallah Khaled - Samara Risha - Aya Reda</b></p>
-  <i>Comprehensive Defence-in-Depth Architecture for Critical Banking Systems</i>
+  <h1>🛡️ ASA Bank: Cybersecurity Architecture Suite</h1>
+  <p><b>Lead Architect: Samara Risha</b></p>
+  <i>A Comprehensive Defence-in-Depth Framework for Mission-Critical Banking Systems</i>
 </div>
 
 ---
 
-### 📖 Overview
-This repository contains the authoritative security architecture documentation for **ASA Bank**[cite: 436]. The design implements a multi-layered defense strategy across **14 distinct security zones**, protecting assets from the internet perimeter to the air-gapped Disaster Recovery (DR) site[cite: 371, 514].
+## 📖 Project Overview
+This repository contains the full security architecture and GRC (Governance, Risk, and Compliance) suite for **ASA Bank**[cite: 436, 533]. The architecture implements a rigid defence-in-depth strategy across **14 distinct security zones**, protecting assets from the internet perimeter to the air-gapped Disaster Recovery site[cite: 371, 447, 544].
 
 ---
 
-### 🗺️ Network Segmentation & Zones
-The architecture utilizes strict VLAN and firewall-based isolation to minimize blast radius[cite: 366, 369]:
+## 🗺️ Security Zone Architecture
+The network is segmented into 14 functional zones to ensure minimal blast radius and strict access control[cite: 371, 422].
 
-* **Perimeter & DMZ**: Three-legged firewall design (`FW-01`) separating public traffic from internal services[cite: 147, 459].
-* **Application Services**: Banking App, Mobile Backend, and IAM/MFA servers[cite: 471].
-* **Identity Services**: Centralized AD, RADIUS, and DNS with LDAPS enforced[cite: 386].
-* **PCI Zone**: Hard-isolated ATM and Payment processing infrastructure with a dedicated `FW-05`[cite: 406, 583].
-* **Data Centre**: Dual-firewall design protecting the Core Banking and Transaction databases[cite: 413, 587].
+### 🌐 Perimeter & Public Facing
+* **Internet Zone**: Untrusted external space for clients and API consumers[cite: 374, 471].
+* **Perimeter Security**: High-risk entry point featuring ISP/Border routers and DDoS protection[cite: 378, 514].
+* **DMZ Network**: Secure segment for WAF, Reverse Proxy, Load Balancer, and Email Gateway[cite: 380, 471].
+* **DMZ Web Servers**: Dedicated sub-zone for internet-facing Web and API servers[cite: 374, 471].
+
+### 🏗️ Internal & Management
+* **Internal Firewall Zone**: Second-tier security boundary enforcing HTTPS/API-only traffic[cite: 382, 492].
+* **Application Services**: Hosting the core Banking App, Mobile Backend, IAM, and MFA servers[cite: 384, 477].
+* **Identity Services**: High-trust zone for Active Directory (LDAPS), RADIUS, and DHCP[cite: 386, 573].
+* **Core Network**: Redundant backbone with dual routers and switches[cite: 388, 514].
+* **VLAN Segments**: Isolated user/system VLANs (HR, Finance, IT, SOC, and OOB Management)[cite: 393, 468, 480].
+
+### 💰 Specialized Banking & SOC
+* **ATM Network**: Hard-isolated infrastructure with a dedicated ATM Gateway[cite: 408, 471].
+* **Payment Processing**: PCI-DSS scoped zone for card processing and transaction servers[cite: 410, 477].
+* **Data Centre**: Dual-firewall protected zone for core banking databases and storage[cite: 413, 586].
+* **SOC**: Centralized monitoring zone for Wazuh SIEM and Log Collection[cite: 256, 417].
+* **Disaster Recovery**: Warm standby site with RTO 4h / RPO 1h[cite: 25, 415, 591].
 
 ---
 
-### 📄 Documentation Suite
+## 📄 Documentation Index
 | Ref | Document Title | Version | Status |
 | :--- | :--- | :--- | :--- |
 | **SEC-DOC-001** | Security Architecture Overview | v2.0 | ✅ Published [cite: 435] |
+| **SEC-DOC-002** | Network Segmentation & VLAN Design | v1.0 | ✅ Published [cite: 354] |
 | **SEC-DOC-003** | Firewall Policy & Rules | v1.0 | ✅ Published [cite: 128] |
 | **SEC-DOC-004** | Log Collection & SIEM Architecture | v1.0 | ✅ Published [cite: 245] |
 | **SEC-DOC-007** | Disaster Recovery & Backup Plan | v1.0 | ✅ Published [cite: 4] |
@@ -41,26 +56,32 @@ The architecture utilizes strict VLAN and firewall-based isolation to minimize b
 
 ---
 
-### ⚙️ Technical Specifications
-* **Recovery Objectives**: Overall RTO of **4 hours** and RPO of **1 hour**[cite: 6, 25, 26].
-* **Database RPO**: 15 minutes via continuous async log shipping[cite: 24, 27, 48].
-* **SIEM Pipeline**: **Wazuh XDR** (`172.16.66.10`) receiving logs from 16 network devices and 23 agents[cite: 247, 274, 277].
-* **MITRE ATT&CK**: Currently covering 60% of relevant techniques, targeting 80% by Q3 2026[cite: 297, 298].
+## ⚙️ Key Technical Parameters
+* **RTO / RPO**: 4 Hours / 1 Hour overall; 15-minute RPO for Tier 1 Databases[cite: 25, 26, 27].
+* **Encryption**: AES-256 at rest and TLS 1.3 in transit enforced[cite: 378, 514, 583].
+* **Monitoring**: Wazuh SIEM mapping alerts to **MITRE ATT&CK** (60% current coverage)[cite: 265, 297].
+* **Log Retention**: 6 months online (Targeting 12 months for PCI compliance in Q2 2026)[cite: 304, 307, 343].
 
 ---
 
-### 🚩 Flag Resolution Register (v2.0 Update)
-Initial architecture vulnerabilities identified in v1.0 have been fully remediated[cite: 516]:
-* **F-01**: DMZ segment fully implemented between perimeter and core[cite: 517].
-* **F-04**: Dedicated PCI Firewall added for ATM/Payment isolation[cite: 517].
-* **F-05**: Out-of-Band (OOB) Management network established (VLAN 50)[cite: 517] (Partially Implmented).
-* **F-07**: Verified log collection paths for all zones to the SOC[cite: 517].
+## 🚩 Resolution Register
+Key vulnerabilities from the initial design (v1.0) have been fully remediated[cite: 516, 517]:
+* **Resolved**: Implemented full DMZ segment and three-legged perimeter firewall[cite: 517].
+* **Resolved**: Established VLAN 50 (Server Management) for isolated OOB traffic[cite: 481, 517].
+* **Resolved**: Isolated PCI/ATM zones with dedicated Firewall (FW-05) and Gateway[cite: 517, 582].
+* **Resolved**: Confirmed and activated DR replication links for all databases[cite: 517, 589].
 
 ---
 
-### 📂 Repository Structure
-```text
-banking-security-architecture/
-├── docs/           # Technical Specification Documents (SEC-DOC series)
-├── diagrams/       # Verified Architecture Screenshots & Native Files
-└── README.md       # Project Executive Summary
+## 📜 Compliance Frameworks
+This architecture is mapped against and complies with[cite: 536, 560]:
+* **ISO/IEC 27001:2022** (A.12.4, A.13, A.17) [cite: 341, 560]
+* **PCI-DSS v4.0** (Req 1, 4, 7, 8, 10, 11) [cite: 341, 560]
+* **CIS Controls v8** (Controls 4, 5, 6, 8, 12, 13) [cite: 558, 560]
+* **NIST SP 800-53 Rev 5** (AC, AU, CP, SC families) [cite: 341, 560]
+
+---
+
+<div align="center">
+  <p><b>Samara Risha</b><br />Computer Science | Cybersecurity Specialization</p>
+</div>
