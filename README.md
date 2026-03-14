@@ -1,20 +1,22 @@
-<div align="center">
-  <img src="https://img.shields.io/badge/ASA%20BANK-SECURITY%20ARCHITECTURE-blue?style=for-the-badge&logo=target" />
-  <img src="https://img.shields.io/badge/DESIGN-14%20SECURITY%20ZONES-orange?style=for-the-badge" />
-  
-  <br />
-  
-  <img src="https://img.shields.io/badge/COMPLIANCE-ISO%2027001%20%7C%20PCI--DSS-green?style=flat-square" />
-  <img src="https://img.shields.io/badge/FRAMEWORK-NIST%20CSF%20%7C%20GDPR-green?style=flat-square" />
-  <img src="https://img.shields.io/badge/STATUS-v2.0%20APPROVED-blue?style=flat-square" />
-</div>
+<table width="100%">
+  <tr>
+    <td width="200px" align="left" style="border: none;">
+      <img src="https://github.com/AbdallahKhaledAmmar/AegisX-CSAAS-Project/raw/9d83c27c2ad3ac3043ec7ad421efadad589faeaf/WhatsApp%20Image%202026-02-23%20at%209.36.22%20PM.jpeg" width="180" alt="AegisX Project Logo" />
+    </td>
+    <td align="right" style="border: none;">
+      <img src="https://img.shields.io/badge/ASA%20BANK-SECURITY%20ARCHITECTURE-blue?style=for-the-badge&logo=target" /><br />
+      <img src="https://img.shields.io/badge/DESIGN-14%20SECURITY%20ZONES-orange?style=flat-square" />
+      <img src="https://img.shields.io/badge/STATUS-v2.0%20APPROVED-blue?style=flat-square" /><br />
+      <img src="https://img.shields.io/badge/FRAMEWORK-NIST%20CSF%20%7C%20GDPR-green?style=flat-square" />
+      <img src="https://img.shields.io/badge/COMPLIANCE-ISO%2027001%20%7C%20PCI--DSS-green?style=flat-square" />
+    </td>
+  </tr>
+</table>
 
-<br />
-
 <div align="center">
-  <h1>🛡️ ASA Bank: Cybersecurity Architecture Suite</h1>
-  <p><b>Lead Architect: Samara Risha - Abdallah Khaled - Aya reda</b></p>
-  <i>A Comprehensive Defence-in-Depth Framework for Mission-Critical Banking Systems</i>
+  <h1>🛡️ ASA Bank: Security Architecture Suite</h1>
+  <p><b>Lead Architect: Samara Risha</b></p>
+  <i>A comprehensive defense-in-depth framework for mission-critical banking systems.</i>
 </div>
 
 ---
@@ -80,3 +82,5 @@ This architecture is mapped against and complies with[cite: 536, 560]:
 <div align="center">
   <p><b>Samara Risha - Abdallah Khaled - Aya reda </b><br />Computer Science | Cybersecurity Specialization</p>
 </div>
+
+
