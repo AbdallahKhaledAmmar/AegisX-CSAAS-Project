@@ -1,7 +1,12 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/ASA%20BANK-SECURITY%20ARCHITECTURE-blue?style=for-the-badge&logo=appveyor" />
-  <img src="https://img.shields.io/badge/STATUS-V2.0%20APPROVED-success?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/COMPLIANCE-PCI--DSS%20%7C%20ISO%2027001-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/ASA%20BANK-SECURITY%20ARCHITECTURE-blue?style=for-the-badge&logo=target" />
+  <img src="https://img.shields.io/badge/DESIGN-14%20SECURITY%20ZONES-orange?style=for-the-badge" />
+  
+  <br />
+  
+  <img src="https://img.shields.io/badge/COMPLIANCE-ISO%2027001%20%7C%20PCI--DSS-green?style=flat-square" />
+  <img src="https://img.shields.io/badge/FRAMEWORK-NIST%20CSF%20%7C%20GDPR-green?style=flat-square" />
+  <img src="https://img.shields.io/badge/STATUS-v2.0%20APPROVED-blue?style=flat-square" />
 </div>
 
 <br />
