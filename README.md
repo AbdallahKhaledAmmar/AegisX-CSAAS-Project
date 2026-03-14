@@ -16,7 +16,7 @@
 
 <div align="center">
   <h1>🛡️ ASA Bank: Security Architecture Suite</h1>
-  <p><b>Lead Architect: Samara Risha</b></p>
+  <p><b>Lead Architect: Abdallah Khaled - Samara Risha - Aya Reda</b></p>
   <i>A comprehensive defense-in-depth framework for mission-critical banking systems.</i>
 </div>
 
